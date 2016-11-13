@@ -1,0 +1,41 @@
+{
+  "name": "imnotokaywith",
+  "version": "1.0.0",
+  "description": "ImNotOkWith.com",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline --hot",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://thzinc@github.com/imnotokwith/imnotokaywith.github.io.git"
+  },
+  "keywords": [
+    "imnotokwith",
+    "imgoingto"
+  ],
+  "author": "Daniel James",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/imnotokwith/imnotokaywith.github.io/issues"
+  },
+  "homepage": "https://github.com/imnotokwith/imnotokaywith.github.io#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-fontawesome": "^1.3.1"
+  }
+}
