@@ -94,12 +94,14 @@
 	  _createClass(App, [{
 	    key: 'handleResult',
 	    value: function handleResult(result) {
+	      ga && ga('send', 'Form', 'interact', 'Interacted with form');
 	      if (!result.problem) {
 	        this.setState({
 	          sharingEnabled: false
 	        });
 	      }
 
+	      ga && ga('send', 'Form', 'interactWithProblem', 'Entered something into the form');
 	      var problem = '#ImNotOkWith ' + result.problem + ' ';
 	      var action = result.action ? 'and #ImGoingTo ' + result.action + ' ' : '';
 	      this.setState({
@@ -21721,6 +21723,7 @@
 	            var tweet = function tweet() {
 	                if (!_this3.props.enabled) return;
 
+	                ga && ga('send', 'Share', 'share', 'Share on Twitter');
 	                window.open('https://twitter.com/share?url=' + location + '&text=' + message, '_blank');
 	            };
 

@@ -23,9 +23,10 @@ export default class Share extends React.Component {
     }
 
     renderTwitterShare(location, message) {
-                const tweet = () => {
+        const tweet = () => {
             if (!this.props.enabled) return;
 
+            ga && ga('send', 'Share', 'share', 'Share on Twitter');
             window.open(`https://twitter.com/share?url=${location}&text=${message}`, '_blank');
         }
 
