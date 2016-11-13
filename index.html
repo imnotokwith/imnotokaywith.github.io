@@ -4,9 +4,66 @@
     <meta charset="UTF-8">
     <title>#ImNotOkWith</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans');
+
+      html, body {
+        margin: 0;
+      }
+
+      html, body, input {
+        font-family: 'Open Sans', 'sans-serif';
+      }
+
+      .purpose {
+        font-family: 'Droid Serif', serif;
+        margin: 1rem;
+        padding: 0.5rem;
+        background-color: #F4F0F0;
+      }
+
+      .im-not-okay-with {
+        font-size: 2rem;
+        margin: 1rem;
+      }
+
+      .im-not-okay-with input[type="text"] {
+        font-size: 2rem;
+        width: 100%;
+      }
+
+      .im-not-okay-with input[type="checkbox"] {
+        transform: scale(1.5);
+        margin: 0.5rem;
+        vertical-align: middle;
+      }
+
+      .im-not-okay-with label {
+        color: #AAAAAA;
+      }
+
+      .tweet a {
+        display: inline-block;
+        background-color: #55ACEE;
+        color: #FFFFFF;
+        padding: 1rem;
+      }
+
+      .share {
+        margin: 1rem;
+        text-align: center;
+      }
+
+      .tweet a .fa {
+        vertical-align: middle;
+        padding-left: 1rem;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="flexbox">
+      <div id="app"></div>
+    </div>
     <script src="/dist/bundle.js"></script>
   </body>
 </html>

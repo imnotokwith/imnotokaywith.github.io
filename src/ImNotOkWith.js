@@ -39,7 +39,7 @@ export default class ImNotOkWith extends React.Component {
   renderAction() {
     let checkbox = <input type="checkbox" id="showAction" checked={this.state.showAction} onChange={this.handleShowAction.bind(this)}/>
     let action = this.state.showAction
-      ? <span>I'm going to <input type="text" placeholder={this.props.action} value={this.state.action} onChange={this.handleAction.bind(this)} /></span>
+      ? <span>and I'm going to <input type="text" placeholder={this.props.action} value={this.state.action} onChange={this.handleAction.bind(this)} /></span>
       : <label htmlFor="showAction">I'm going to {this.props.action}</label>
 
     return (
@@ -52,7 +52,7 @@ export default class ImNotOkWith extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="im-not-okay-with">
         <div>
           <span>I'm not okay with </span>
           <input type="text" placeholder={this.props.problem} value={this.state.problem} onChange={this.handleProblem.bind(this)}/>
