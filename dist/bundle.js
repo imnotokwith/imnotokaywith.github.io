@@ -21571,7 +21571,7 @@
 	      var action = this.state.showAction ? _react2.default.createElement(
 	        'span',
 	        null,
-	        'I\'m going to ',
+	        'and I\'m going to ',
 	        _react2.default.createElement('input', { type: 'text', placeholder: this.props.action, value: this.state.action, onChange: this.handleAction.bind(this) })
 	      ) : _react2.default.createElement(
 	        'label',
@@ -21592,7 +21592,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'im-not-okay-with' },
 	        _react2.default.createElement(
 	          'div',
 	          null,
@@ -21624,7 +21624,7 @@
 /* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21639,11 +21639,11 @@
 
 	function Message(props) {
 	  return _react2.default.createElement(
-	    'article',
-	    null,
-	    'Since November 8, 2016, there has been a notable rise in people acting cruelly and hatefully in the name of ',
+	    "article",
+	    { className: "purpose" },
+	    "Since November 8, 2016, there has been a notable rise in people acting cruelly and hatefully in the name of ",
 	    props.title,
-	    ' Trump. The actions of these emboldened hateful people are being attributed to those who would also remain silent. Whether you voted for Trump or not, the people around you need to know that you do not condone hate. Tell them!'
+	    " Trump. The actions of these emboldened hateful people are being attributed to those who would also remain silent. Whether you voted for Trump or not, the people around you need to know that you do not condone hate. Tell them!"
 	  );
 	}
 
@@ -21658,7 +21658,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -21680,85 +21680,85 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Share = function (_React$Component) {
-		_inherits(Share, _React$Component);
+	    _inherits(Share, _React$Component);
 
-		function Share() {
-			_classCallCheck(this, Share);
+	    function Share() {
+	        _classCallCheck(this, Share);
 
-			return _possibleConstructorReturn(this, (Share.__proto__ || Object.getPrototypeOf(Share)).apply(this, arguments));
-		}
+	        return _possibleConstructorReturn(this, (Share.__proto__ || Object.getPrototypeOf(Share)).apply(this, arguments));
+	    }
 
-		_createClass(Share, [{
-			key: 'renderFacebookShare',
-			value: function renderFacebookShare(location) {
-				var _this2 = this;
+	    _createClass(Share, [{
+	        key: 'renderFacebookShare',
+	        value: function renderFacebookShare(location) {
+	            var _this2 = this;
 
-				// HACK: need to work out UX for posting to Facebook since pre-filled messages can't be used anymore
-				return;
+	            // HACK: need to work out UX for posting to Facebook since pre-filled messages can't be used anymore
+	            return;
 
-				var post = function post() {
-					if (!_this2.props.enabled) return;
+	            var post = function post() {
+	                if (!_this2.props.enabled) return;
 
-					window.open('http://www.facebook.com/sharer.php?u=' + location, '_blank');
-				};
+	                window.open('http://www.facebook.com/sharer.php?u=' + location, '_blank');
+	            };
 
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-						'a',
-						{ href: '#', onClick: post },
-						'Review and Post',
-						_react2.default.createElement(_reactFontawesome2.default, { name: 'facebook', size: '2x' })
-					)
-				);
-			}
-		}, {
-			key: 'renderTwitterShare',
-			value: function renderTwitterShare(location, message) {
-				var _this3 = this;
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'a',
+	                    { href: '#', onClick: post },
+	                    'Review and Post',
+	                    _react2.default.createElement(_reactFontawesome2.default, { name: 'facebook', size: '2x' })
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'renderTwitterShare',
+	        value: function renderTwitterShare(location, message) {
+	            var _this3 = this;
 
-				var tweet = function tweet() {
-					if (!_this3.props.enabled) return;
+	            var tweet = function tweet() {
+	                if (!_this3.props.enabled) return;
 
-					window.open('https://twitter.com/share?url=' + location + '&text=' + message, '_blank');
-				};
+	                window.open('https://twitter.com/share?url=' + location + '&text=' + message, '_blank');
+	            };
 
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-						'a',
-						{ href: '#', onClick: tweet },
-						'Review and Tweet',
-						_react2.default.createElement(_reactFontawesome2.default, { name: 'twitter', size: '2x' })
-					)
-				);
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				var location = encodeURIComponent(window.location);
-				var message = encodeURIComponent(this.props.message);
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'tweet' },
+	                _react2.default.createElement(
+	                    'a',
+	                    { href: '#', onClick: tweet },
+	                    'Review and Tweet',
+	                    _react2.default.createElement(_reactFontawesome2.default, { name: 'twitter', size: '2x' })
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var location = encodeURIComponent(window.location);
+	            var message = encodeURIComponent(this.props.message);
 
-				return _react2.default.createElement(
-					'div',
-					null,
-					this.renderFacebookShare(location),
-					this.renderTwitterShare(location, message)
-				);
-			}
-		}]);
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'share' },
+	                this.renderFacebookShare(location),
+	                this.renderTwitterShare(location, message)
+	            );
+	        }
+	    }]);
 
-		return Share;
+	    return Share;
 	}(_react2.default.Component);
 
 	exports.default = Share;
 
 
 	Share.propTypes = {
-		enabled: _react2.default.PropTypes.bool.isRequired,
-		message: _react2.default.PropTypes.string.isRequired
+	    enabled: _react2.default.PropTypes.bool.isRequired,
+	    message: _react2.default.PropTypes.string.isRequired
 	};
 
 /***/ },
