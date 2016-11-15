@@ -90,7 +90,8 @@
 	      facebook: '',
 	      twitter: '',
 	      problem: _this.getRandomProblem(),
-	      timeout: 250
+	      timeout: 250,
+	      title: new Date() < new Date('2017-01-20') ? 'President-elect' : 'President'
 	    };
 
 	    _this.updateProblem();
@@ -136,7 +137,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_Message2.default, { title: 'President-elect' }),
+	        _react2.default.createElement(_Message2.default, { title: this.state.title }),
 	        _react2.default.createElement(_ImNotOkWith2.default, {
 	          problem: this.state.problem,
 	          action: 'do something about it',
@@ -27219,9 +27220,14 @@
 	  return _react2.default.createElement(
 	    'article',
 	    { styleName: 'purpose' },
-	    'Since November 8, 2016, there has been a notable rise in people acting cruelly and hatefully in the name of ',
+	    'There has been a notable rise in people acting cruelly and hatefully in the name of ',
 	    props.title,
-	    ' Trump. The actions of these emboldened hateful people are being attributed to those who would also remain silent. Whether you voted for Trump or not, the people around you need to know that you do not condone hate. Tell them!'
+	    ' Trump. The actions of these emboldened hateful people are being attributed to those who would also remain silent. Whether you voted for Trump or not, the people around you need to know that you do not condone hate. ',
+	    _react2.default.createElement(
+	      'strong',
+	      null,
+	      'Tell them!'
+	    )
 	  );
 	}
 
