@@ -1,6 +1,8 @@
 import React from 'react';
+import createStyledComponent from 'react-css-modules';
+import styles from './ImNotOkWith.css';
 
-export default class ImNotOkWith extends React.Component {
+class ImNotOkWith extends React.Component {
   constructor(props) {
     super(props);
     
@@ -37,10 +39,10 @@ export default class ImNotOkWith extends React.Component {
   }
 
   renderAction() {
-    let checkbox = <input type="checkbox" id="showAction" checked={this.state.showAction} onChange={this.handleShowAction.bind(this)}/>
+    let checkbox = <input styleName="checkbox" type="checkbox" id="showAction" checked={this.state.showAction} onChange={this.handleShowAction.bind(this)} />
     let action = this.state.showAction
-      ? <span>and I'm going to <input type="text" placeholder={this.props.action} value={this.state.action} onChange={this.handleAction.bind(this)} /></span>
-      : <label htmlFor="showAction">I'm going to {this.props.action}</label>
+      ? <span>and I'm going to <textarea styleName="input" placeholder={this.props.action} value={this.state.action} onChange={this.handleAction.bind(this)} /></span>
+      : <label htmlFor="showAction" styleName="label">I'm going to {this.props.action}</label>
 
     return (
       <div>
@@ -52,10 +54,10 @@ export default class ImNotOkWith extends React.Component {
 
   render() {
     return (
-      <div className="im-not-okay-with">
+      <div styleName="container">
         <div>
           <span>I'm not okay with </span>
-          <input type="text" placeholder={this.props.problem} value={this.state.problem} onChange={this.handleProblem.bind(this)}/>
+          <textarea styleName="input" rows="3" placeholder={this.props.problem} value={this.state.problem} onChange={this.handleProblem.bind(this)}/>
         </div>
         {this.renderAction()}
       </div>
@@ -68,3 +70,5 @@ ImNotOkWith.propTypes = {
   action: React.PropTypes.string.isRequired,
   handleResult: React.PropTypes.func.isRequired,
 };
+
+export default createStyledComponent(ImNotOkWith, styles);
