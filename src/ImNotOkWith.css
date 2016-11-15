@@ -12,6 +12,13 @@
 .input {
   font-size: 2rem;
   width: 100%;
+  height: 4em;
+}
+
+@media (min-width: 900px) {
+  .input {
+    height: 2em;
+  }
 }
 
 .checkbox {

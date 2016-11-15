@@ -21,6 +21,7 @@ class App extends React.Component {
       twitter: '',
       problem: this.getRandomProblem(),
       timeout: 250,
+      title: (new Date() < new Date('2017-01-20')) ? 'President-elect' : 'President',
     };
 
     this.updateProblem();
@@ -61,7 +62,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Message title="President-elect" />
+        <Message title={this.state.title} />
         <ImNotOkWith
           problem={this.state.problem}
           action="do something about it"
