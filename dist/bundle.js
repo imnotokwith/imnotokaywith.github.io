@@ -116,14 +116,14 @@
 	  }, {
 	    key: 'handleResult',
 	    value: function handleResult(result) {
-	      ga && ga('send', 'Form', 'interact', 'Interacted with form');
+	      ga && ga('send', 'event', 'Form', 'interact', 'Interacted with form');
 	      if (!result.problem) {
 	        this.setState({
 	          sharingEnabled: false
 	        });
 	      }
 
-	      ga && ga('send', 'Form', 'interactWithProblem', 'Entered something into the form');
+	      ga && ga('send', 'event', 'Form', 'interactWithProblem', 'Entered something into the form');
 	      var problem = '#ImNotOkWith ' + result.problem + ' ';
 	      var action = result.action ? 'and #ImGoingTo ' + result.action + ' ' : '';
 	      this.setState({
@@ -27496,7 +27496,7 @@
 	      var tweet = function tweet() {
 	        if (!_this2.props.enabled) return;
 
-	        ga && ga('send', 'Share', 'share', 'Share on Twitter');
+	        ga && ga('send', 'event', 'Share', 'share', 'Share on Twitter');
 	        window.open('https://twitter.com/share?url=' + location + '&text=' + message, '_blank');
 	      };
 
@@ -27578,7 +27578,7 @@
 	      var post = function post() {
 	        if (!_this2.props.enabled) return;
 
-	        ga && ga('send', 'Share', 'share', 'Share on Facebook');
+	        ga && ga('send', 'event', 'Share', 'share', 'Share on Facebook');
 	        FB && FB.ui({
 	          method: 'share',
 	          href: _this2.props.location,

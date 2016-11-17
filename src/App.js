@@ -41,14 +41,14 @@ class App extends React.Component {
   }
 
   handleResult(result) {
-    ga && ga('send', 'Form', 'interact', 'Interacted with form');
+    ga && ga('send', 'event', 'Form', 'interact', 'Interacted with form');
     if (!result.problem) {
       this.setState({
         sharingEnabled: false,
       });
     }
 
-    ga && ga('send', 'Form', 'interactWithProblem', 'Entered something into the form');
+    ga && ga('send', 'event', 'Form', 'interactWithProblem', 'Entered something into the form');
     const problem = `#ImNotOkWith ${result.problem} `;
     const action = result.action
       ? `and #ImGoingTo ${result.action} `

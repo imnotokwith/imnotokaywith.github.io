@@ -8,7 +8,7 @@ class Tweet extends React.Component {
     const post = () => {
       if (!this.props.enabled) return;
 
-      ga && ga('send', 'Share', 'share', 'Share on Facebook');
+      ga && ga('send', 'event', 'Share', 'share', 'Share on Facebook');
       FB && FB.ui({
         method: 'share',
         href: this.props.location,

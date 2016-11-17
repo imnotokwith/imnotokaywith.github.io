@@ -11,7 +11,7 @@ class Tweet extends React.Component {
     const tweet = () => {
       if (!this.props.enabled) return;
 
-      ga && ga('send', 'Share', 'share', 'Share on Twitter');
+      ga && ga('send', 'event', 'Share', 'share', 'Share on Twitter');
       window.open(`https://twitter.com/share?url=${location}&text=${message}`, '_blank');
     }
 
